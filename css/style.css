@@ -1,7 +1,9 @@
 body {
   text-align: center;
   font-family: sans-serif;
+  background-color: whitesmoke;
 }
+
 .parastyling {
   display: inline-block;
   margin: 10px;
@@ -11,6 +13,7 @@ body {
   padding: 8px;
   border: 1px solid gray;
 }
+
 .delbutstyling {
   background-color: red;
   border: 1px solid whitesmoke;
@@ -23,18 +26,46 @@ body {
   top: -12px;
   border-radius: 10px;
 }
+
 h1 {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
+
 .input-group {
   width: 40%;
   margin-left: 30%;
+  margin-bottom: 3px;
+  margin-top: 5px;
 }
+
 .form-control {
   border: 1px solid goldenrod;
+  padding: 14px;
+  border-radius: 5px;
+  font-size: 14px;
 }
+
+.form-control:focus {
+  background-color: lightcyan;
+}
+
 h4,
 h6 {
   color: gray;
+}
+
+.btn {
+  background-color: goldenrod;
+  margin-left: 2px;
+  color: black;
+  border: 1px solid gold;
+  padding: 14px;
+  width: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-div {
+  margin-top: 5px;
 }
