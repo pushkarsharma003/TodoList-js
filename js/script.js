@@ -1,3 +1,4 @@
+let totalTasks = 0;
 let add = document.getElementById("addTodo");
 let content = document.getElementById("content-div");
 let inputdata = document.getElementById("todo-input");
@@ -17,10 +18,15 @@ add.addEventListener("click", function () {
     content.appendChild(delBut);
     content.appendChild(b);
     inputdata.value = "";
+    totalTasks++;
+    console.log(totalTasks);
+    document.querySelector(".total-task-count").textContent = totalTasks;
     delBut.addEventListener("click", function () {
       newPara.remove();
       delBut.remove();
       b.remove();
+      totalTasks--;
+      document.querySelector(".total-task-count").textContent = totalTasks;
     });
     newPara.addEventListener("click", function () {
       if (newPara.style.textDecoration === "line-through") {
