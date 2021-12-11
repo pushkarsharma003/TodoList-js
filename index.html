@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo-List</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div class="header-div">
+      <header>
+        <h1>Todo List</h1>
+        <h4>version: v0.3.0</h4>
+        <div class="task-count">
+          Total todos available :
+          <span class="total-task-count">0</span>
+        </div>
+      </header>
+    </div>
+
+    <div>
+      <button class="plus-btn" id="show-btn">
+        <img src="./images/plus.png" alt="+" class="plus-btn-img" />
+      </button>
+      <div class="input-group" id="input-div">
+        <input
+          class="form-control"
+          type="text"
+          id="todo-input"
+          placeholder="Click to enter todo..."
+          required
+        />
+        <button class="btn" id="addTodo">Add</button>
+      </div>
+    </div>
+    <br />
+    <div id="content-div">No todos found... click on '+' to add!</div>
+
+    <div class="footer">
+      <h6>Build with &#128151; by PUSHKAR SHARMA</h6>
+      <h6>Version last updated : The 11th day of December in 2021</h6>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
