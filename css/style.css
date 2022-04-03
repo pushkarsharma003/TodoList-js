@@ -104,7 +104,7 @@ h6 {
 #content-div {
   border: 1px solid lightgray;
   margin: 0px auto;
-  width: 70%;
+  width: 85%;
   border-radius: 10px;
   background-color: whitesmoke;
 }
@@ -116,4 +116,8 @@ h6 {
   width: 100%;
   text-align: center;
   min-height: 50px;
+}
+.tick {
+  float: left;
+  transform: translate(20px, -50px);
 }

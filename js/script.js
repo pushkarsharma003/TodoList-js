@@ -19,8 +19,7 @@ add.addEventListener("click", function () {
     id_count++;
     var tick = document.createElement("img");
     tick.src = "./images/blank_tick.png";
-    tick.style.float = "left";
-    tick.style.transform = "translate(10px, -50px)";
+    tick.classList.add("tick");
     newPara.innerText = inputdata.value;
     if (totalTasks == 0) {
       content.textContent = "";
