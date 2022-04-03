@@ -15,11 +15,12 @@ add.addEventListener("click", function () {
     var b = document.createElement("br");
     delBut.innerHTML = "X";
     delBut.classList.add("delbutstyling");
-    var editBut = document.createElement("BUTTON");
-    editBut.innerHTML = "Edit";
-    editBut.classList.add("editbutstyling");
     newPara.setAttribute("id", id_count);
     id_count++;
+    var tick = document.createElement("img");
+    tick.src = "./images/blank_tick.png";
+    tick.style.float = "left";
+    tick.style.transform = "translate(10px, -50px)";
     newPara.innerText = inputdata.value;
     if (totalTasks == 0) {
       content.textContent = "";
@@ -27,7 +28,7 @@ add.addEventListener("click", function () {
     content.appendChild(newPara);
     content.appendChild(delBut);
     content.appendChild(b);
-    content.appendChild(editBut);
+    content.appendChild(tick);
     inputdata.value = "";
     totalTasks++;
     console.log(totalTasks);
@@ -39,8 +40,8 @@ add.addEventListener("click", function () {
     delBut.addEventListener("click", function () {
       newPara.remove();
       delBut.remove();
-      editBut.remove();
       b.remove();
+      tick.remove();
       totalTasks--;
       if (totalTasks == 0) {
         content.textContent = "No todos found... click on '+' to add!";
@@ -50,21 +51,35 @@ add.addEventListener("click", function () {
       document.querySelector(".total-task-count").textContent = totalTasks;
     });
 
-    //task done handler
-    newPara.addEventListener("click", function () {
-      if (newPara.style.textDecoration === "line-through") {
-        newPara.style.textDecoration = "solid";
+    tick.addEventListener("click", function () {
+      if (newPara.style.backgroundColor === "linen") {
+        newPara.style.backgroundColor = "lightgreen";
+        tick.src = "./images/green_tick.png";
       } else {
-        newPara.style.textDecoration = "line-through";
+        newPara.style.backgroundColor = "linen";
+        tick.src = "./images/blank_tick.png";
       }
     });
 
-    //edit button handler
-    editBut.addEventListener("click", function () {
-      var atr = newPara.getAttribute("id");
+    const countSpaces = (s) => {
+      var space_count = 0;
+      for (let i = 0; i < s.length; i++) {
+        if (s.charAt(i) == " ") {
+          space_count++;
+        }
+      }
+      return space_count;
+    };
+
+    //edit todo handler
+    newPara.addEventListener("click", function () {
       var editInput = prompt("Enter value to edit...", newPara.textContent);
-      console.log(editInput);
-      newPara.textContent = editInput;
+      if (
+        editInput.length !== 0 &&
+        countSpaces(editInput) !== editInput.length
+      ) {
+        newPara.textContent = editInput;
+      }
     });
   }
 });
